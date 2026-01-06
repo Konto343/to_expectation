@@ -1,0 +1,39 @@
+{
+  "name": "game",
+  "servePort": 8022,
+  "servePlaceIds": [91868870983711],
+  "tree": {
+    "$className": "DataModel",
+
+    "ReplicatedStorage": {
+      "shared": {
+        "$path": "src/game_shared"
+      }
+    },
+
+    "ServerScriptService": {
+      "server": {
+        "$path": "src/game_server"
+      }
+    },
+
+    "StarterPlayer": {
+      "StarterPlayerScripts": {
+        "client": {
+          "$path": "src/game_client"
+        }
+      }
+    },
+
+    "Workspace": {
+      "$properties": {
+        "FilteringEnabled": true
+      }
+    },
+    "SoundService": {
+      "$properties": {
+        "RespectFilteringEnabled": true
+      }
+    }
+  }
+}
