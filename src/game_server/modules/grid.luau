@@ -34,9 +34,6 @@ function module.make_grid(x : number, z :number)
     clone.CFrame = startpos
 
     sounds:play_sound(sfx.grid.rising, clone)
-
-    local distance = (endpos.Position - Vector3.new()).Magnitude
-
     endcolor = Color3.fromRGB(91, 91, 91)
 
     local rise = ts:Create(clone, TweenInfo.new(2, Enum.EasingStyle.Exponential), {

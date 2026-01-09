@@ -1,6 +1,6 @@
 local grid = require(game.ServerScriptService.server.modules.grid)
-local sounds = require(game.ReplicatedStorage.shared.sounds)
-local sfx = game.ReplicatedStorage:WaitForChild('sfx', 10)
+-- local sounds = require(game.ReplicatedStorage.shared.sounds)
+-- local sfx = game.ReplicatedStorage:WaitForChild('sfx', 10)
 
 local test_range = {-12, 12}
 

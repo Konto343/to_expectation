@@ -7,26 +7,26 @@ local state = false
 local camera = workspace.CurrentCamera
 local player = game.Players.LocalPlayer
 
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid",10)
+
 function in_first_person()
-	local character = player.Character or player.CharacterAdded:Wait()
-	local head = character:WaitForChild("Head", 10)
+	local char = player.Character or player.CharacterAdded:Wait()
+	local head = char:WaitForChild("Head", 10)
 	if not head then return false end
 	
 	return (head.CFrame.p - camera.CFrame.p).magnitude <= 2
 end
 
-local character = player.Character or player.CharacterAdded:Wait()
-local humanoid = character:WaitForChild("Humanoid",10)
-
 for _, child in pairs(character:GetChildren()) do
 	if child:IsA("BasePart") then
-    if child.Name == 'Head' then
-      continue
-    end
+		if child.Name == 'Head' then
+			continue
+		end
 
-    if child.Name == 'Torso' then
-      continue
-    end
+		if child.Name == 'Torso' then
+			continue
+		end
 
 		child:GetPropertyChangedSignal("LocalTransparencyModifier"):Connect(function()
 			child.LocalTransparencyModifier = child.Transparency

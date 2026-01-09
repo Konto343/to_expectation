@@ -2,7 +2,7 @@ local rs = game:GetService("RunService")
 
 local module = {}
 
-function module:new()
+function module.new()
     local self = {}
     self.start_time = 0 :: number
     self.elapsed_time = 0 :: number
