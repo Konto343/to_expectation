@@ -1,7 +1,6 @@
---!strict
-
 local players = game:GetService('Players')
 local ts = game:GetService('TweenService')
+
 local remotes = require(game.ReplicatedStorage.shared.remotes)
 local types = require(game.ReplicatedStorage.shared.types)
 

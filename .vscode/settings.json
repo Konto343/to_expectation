@@ -1,0 +1,4 @@
+{
+    "luau-lsp.sourcemap.rojoProjectFile": "game.project.json",
+    "luau-lsp.plugin.enabled": true
+}

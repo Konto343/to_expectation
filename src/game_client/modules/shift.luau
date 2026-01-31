@@ -1,7 +1,11 @@
+local module = {}
+
+local players = game:GetService('Players')
 local uis = game:GetService('UserInputService')
+
 local target_key = Enum.KeyCode.LeftShift
 
-local player = game.Players.LocalPlayer
+local player = players.LocalPlayer
 local char = player.Character or player.CharacterAdded:Wait()
 local humanoid = char:FindFirstChild("Humanoid") 
 
@@ -21,7 +25,7 @@ uis.InputBegan:Connect(function(input, gpe)
         return
     end
 
-    if not input.KeyCode == target_key then
+    if not (input.KeyCode == target_key) then
         return
     end
 
@@ -33,9 +37,11 @@ uis.InputEnded:Connect(function(input, gpe)
         return
     end
 
-    if not input.KeyCode == target_key then
+    if not (input.KeyCode == target_key) then
         return
     end
 
     changed(false)
 end)
+
+return module

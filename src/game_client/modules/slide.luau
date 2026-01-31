@@ -1,3 +1,5 @@
+local module = {}
+
 local run = game:GetService('RunService')
 local uis = game:GetService('UserInputService')
 local players = game:GetService('Players')
@@ -71,3 +73,5 @@ uis.InputEnded:Connect(function(input)
         physics.Velocity = Vector3.new()
     end
 end)
+
+return module

@@ -1,3 +1,5 @@
+local module = {}
+
 local tilt_speed = 0.05 --lower number is faster tiliting
 local tilt_boost = .2 --around .1 is normal
 
@@ -32,3 +34,5 @@ for _, player in game.Players:GetPlayers() do
 		setup(player)
 	end
 end
+
+return module

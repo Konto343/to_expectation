@@ -1,3 +1,5 @@
+local module = {}
+
 local player = game.Players.LocalPlayer
 local player_gui = player.PlayerGui
 
@@ -20,3 +22,5 @@ timer.connection = function(elapsed)
         end
     end
 end
+
+local module

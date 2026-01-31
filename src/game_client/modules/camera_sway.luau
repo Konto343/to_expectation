@@ -21,7 +21,6 @@ module.toggle_state = function(override)
 	
 	if state then
 		connection = rs:BindToRenderStep("camera_sway", Enum.RenderPriority.Camera.Value + 1, function(deltaTime)
-
 			local delta = uis:GetMouseDelta()
 
 			module._turn = lerp(module._turn, math.clamp(delta.X, - module.sway_strength, module.sway_strength), (module.delta_boost * deltaTime))
@@ -33,7 +32,5 @@ module.toggle_state = function(override)
 		end
 	end
 end
-
-module.toggle_state()
 
 return module

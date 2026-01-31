@@ -1,11 +1,15 @@
+local module = {}
+
 local content = game:GetService('ContentProvider')
 local ts = game:GetService('TweenService')
 local rs = game:GetService('RunService')
+local players = game:GetService('Players')
+local rep = game:GetService('ReplicatedStorage')
 
-local sounds = require(game.ReplicatedStorage.shared.sounds)
-local sfx = game.ReplicatedStorage:WaitForChild('sfx', 10)
+local sounds = require(rep.shared.sounds)
+local sfx = rep:WaitForChild('sfx', 10)
 
-local gui = game.Players.LocalPlayer.PlayerGui
+local gui = players.LocalPlayer.PlayerGui
 
 local loading_ui = gui:WaitForChild('loading', 10).container :: Frame
 local header = loading_ui.header :: TextLabel
@@ -49,7 +53,7 @@ play_button.MouseButton1Down:Once(function()
         task.wait(2)
 
         sounds:play_sound(sfx.ui.click)
-        play_button.Text = `Remember {game.Players.LocalPlayer.DisplayName}...`
+        play_button.Text = `Remember {players.LocalPlayer.DisplayName}...`
 
         task.wait(2)
 
@@ -94,3 +98,4 @@ end)
 
 ts:Create(sfx.music.loading, TweenInfo.new(3), {PlaybackSpeed = 0.2}):Play()
 
+return module
